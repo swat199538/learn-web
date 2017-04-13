@@ -4,11 +4,24 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>认识html标签</title>
     <style type="text/css">
+        /*通用选择器是功能最强大的选择器，它使用一个（*）号指定，它的作用是匹配html中所有标签元素*/
+        *{font-size: 12px};
         /*id选择器只能使用一次*/
-        h1{
-            font-weight:normal;
-            color:red;
-        }
+        h1{font-weight:normal;color:red;}
+        /*子选择器比较有用的选择器子选择器，即大于符号(>),用于选择指定标签元素的第一代子元素。*/
+        .food>li{border:1px solid red;}
+        /*包含选择器，即加入空格,用于选择指定标签元素下的后辈元素。*/
+        .first span{color: #000;}
+        /*伪类选择符，它允许给html不存在的标签（标签的某种状态）设置样式*/
+        a:hover{color: red}
+        /*当你想为html中多个标签元素设置同一个样式时，可以使用分组选择符（，）*/
+        h1,span{color: red}
+        /*CSS的某些样式是具有继承性的，那么什么是继承呢？继承是一种规则，它允许样式不仅应用于某个特定html标签元素，而且应用于其后代。*/
+        p{color:red;}/*<p>三年级时，我还是一个<span>胆小如鼠</span>的小女孩。</p>*/
+        /*标签的权值为1，类选择符的权值为10，ID选择符的权值最高为100*/
+        /*层叠就是在html文件中对于同一个元素可以有多个css样式存在，当有相同权重的样式存在时，会根据这些css样式的前后顺序来决定，处于最后面的css样式会被应用*/
+        /*重要性,我们在做网页代码的时，有些特殊的情况需要为某些样式设置具有最高权值，怎么办？这时候我们可以使用!important来解决*/
+        p{color:red!important;}
     </style>
 </head>
 <body>
